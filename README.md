@@ -4,7 +4,7 @@
 1. [ Introduction](#intro)
 2. [ F# Overview ](#FOver)
 3. [ Go Overview ](#GoOver)
-4. [ Boolean Parser Example] (#boolEx)
+4. [ Boolean Parser Example] (#BoolEx)
 5. [ Comparison ](#Comp)
 6. [ Conclusion ](#Conc)
 
@@ -21,7 +21,7 @@ sometext
 <a name="GoOver"></a>
 ## 3. Go Overview
 
-<a name="boolEx"></a>
+<a name="BoolEx"></a>
 ## 4. Boolean Parser Example
 
 <a name="Comp"></a>
