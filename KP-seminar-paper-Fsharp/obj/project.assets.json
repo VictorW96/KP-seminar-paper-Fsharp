@@ -113,11 +113,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\KP-seminar-paper-Fsharp\\KP-seminar-paper-Fsharp\\KP-seminar-paper-Fsharp.fsproj",
+      "projectUniqueName": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\KP-seminar-paper-Fsharp\\KP-seminar-paper-Fsharp.fsproj",
       "projectName": "KP-seminar-paper-Fsharp",
-      "projectPath": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\KP-seminar-paper-Fsharp\\KP-seminar-paper-Fsharp\\KP-seminar-paper-Fsharp.fsproj",
+      "projectPath": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\KP-seminar-paper-Fsharp\\KP-seminar-paper-Fsharp.fsproj",
       "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\KP-seminar-paper-Fsharp\\KP-seminar-paper-Fsharp\\obj\\",
+      "outputPath": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\KP-seminar-paper-Fsharp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
