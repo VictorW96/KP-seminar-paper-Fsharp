@@ -7,11 +7,11 @@ open System
 open System.Reflection
 
 
-[<assembly: System.Reflection.AssemblyCompanyAttribute("KP-seminar-paper-Fsharp")>]
+[<assembly: System.Reflection.AssemblyCompanyAttribute("BooleanCompiler")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Release")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
 [<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")>]
-[<assembly: System.Reflection.AssemblyProductAttribute("KP-seminar-paper-Fsharp")>]
-[<assembly: System.Reflection.AssemblyTitleAttribute("KP-seminar-paper-Fsharp")>]
+[<assembly: System.Reflection.AssemblyProductAttribute("BooleanCompiler")>]
+[<assembly: System.Reflection.AssemblyTitleAttribute("BooleanCompiler")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]
 do()

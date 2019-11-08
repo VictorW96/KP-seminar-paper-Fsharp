@@ -3,11 +3,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <RootNamespace>KP_seminar_paper_Fsharp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="BasicFunctions.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
