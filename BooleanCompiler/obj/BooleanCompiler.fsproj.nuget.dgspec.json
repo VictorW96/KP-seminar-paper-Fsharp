@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Victor\\Source\\Repos\\VictorW96\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj": {}
+    "C:\\Users\\Victor\\Source\\Repos\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\Victor\\Source\\Repos\\VictorW96\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj": {
+    "C:\\Users\\Victor\\Source\\Repos\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Victor\\Source\\Repos\\VictorW96\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj",
+        "projectUniqueName": "C:\\Users\\Victor\\Source\\Repos\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj",
         "projectName": "BooleanCompiler",
-        "projectPath": "C:\\Users\\Victor\\Source\\Repos\\VictorW96\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj",
+        "projectPath": "C:\\Users\\Victor\\Source\\Repos\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj",
         "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Victor\\Source\\Repos\\VictorW96\\KP-seminar-paper-Fsharp\\BooleanCompiler\\obj\\",
+        "outputPath": "C:\\Users\\Victor\\Source\\Repos\\KP-seminar-paper-Fsharp\\BooleanCompiler\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -36,6 +36,10 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "FSharp.Compiler.Service": {
+              "target": "Package",
+              "version": "[33.0.0, )"
+            },
             "FSharp.Core": {
               "target": "Package",
               "version": "[4.7.0, )"
