@@ -34,7 +34,17 @@ One goal of functional programming is also to minimze the use of mutable state. 
 <a name="fconc"></a>
 ### 2. F# concepts
 
-In this section we will focus on the propertys of F#'s language features like type interference,  
+In this section we will focus on the propertys of F#'s language features.
+
+#### Let Bindings and immutability
+
+```fhsarp
+let a = 10
+a = 10
+```
+
+This code isn't valid F# code for two reasons. First if you bind a value to an identifier with the `let` binding you cannot 
+alter it anymore. It is immutable to assert one principle of functional programming. Secondly the `=` is the equality sign and not the assignment operator. This would be `<-`.
 
 <a name="GoOver"></a>
 ## 3. Go Overview
