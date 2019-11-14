@@ -26,13 +26,15 @@ Its language features are very similar to [OCaml](https://de.wikipedia.org/wiki/
 
 <a name="fprog"></a>
 ### 1. Functional programming basics
-	The basic concept of functional programing is that the most important structural unit is a function in contrast for example to object oriented programming, where the 
-	most important structural unit is a class. The abstraction happens through passing basic functions to higher level functions as arguments. 
-	One goal of functional programming is also to minimze the use of mutable state. So in a functional programming language you only work with immutable data structures.
+
+The basic concept of functional programing is that the most important structural unit is a function in contrast for example to object oriented programming, where the 
+most important structural unit is a class. The abstraction happens through passing basic functions to higher level functions as arguments. 
+One goal of functional programming is also to minimze the use of mutable state. So in a functional programming language you only work with immutable data structures.
 
 <a name="fconc"></a>
 ### 2. F# concepts
-	In this section we will focus on the propertys of F#'s language features like type interference,  
+
+In this section we will focus on the propertys of F#'s language features like type interference,  
 
 <a name="GoOver"></a>
 ## 3. Go Overview
