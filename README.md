@@ -60,7 +60,7 @@ let prefix prefixStr baseStr =
     prefixStr + "," + baseStr
 ```
 
-F# interferes that the arguments `prefixStr` and `baseStr` have to be of type `string` and that the function returns a `string` because of the method body and the operation in which they are used. You can always add the type definition, if you want to. But so F# combines the security of a strong typed language and the read- and writability of a loosely typed language.
+F# interferes that the arguments `prefixStr` and `baseStr` have to be of type `string` and that the function returns a `string` because of the method body and the operation in which they are used. You can always add the type definition, if you want to. In this way F# combines the security of a strongly typed language and the read- and writability of a loosely typed language, which is similar to Go.
 
 <a name="GoOver"></a>
 ## 3. Go Overview
