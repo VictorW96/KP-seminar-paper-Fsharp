@@ -46,7 +46,21 @@ a = 20
 This code isn't valid F# code for two reasons. First if you bind a value to an identifier with the `let` binding you cannot 
 alter it anymore. It is immutable to assert one principle of functional programming. Second the `=` is the equality sign and not the assignment operator. This would be `<-`. You can do mutable data structures with `let mutable` but with this extra keyword its obviously discouraged.
 
-#### 
+#### Type interference
+
+```fhsarp
+let a = 10
+a = 20
+```
+
+Like we have seen above, we do not have to give a type definition for the variable `a`. F# derives it because the value `10` is of type `int` so `a` must be an `int` too. F# also can do this in more complex constructs like functions, consider this function definition.
+
+```fhsarp
+let prefix prefixStr baseStr =
+    prefixStr + "," + baseStr
+```
+
+F# interferes that the arguments `prefixStr` and `baseStr` have to be of type `string` and that the function returns a `string` because of the method body and the operation in which they are used. You can always add the type definition, if you want to. But so F# combines the security of a strong typed language and the read- and writability of a loosely typed language.
 
 <a name="GoOver"></a>
 ## 3. Go Overview
