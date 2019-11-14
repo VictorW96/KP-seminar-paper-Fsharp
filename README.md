@@ -44,7 +44,7 @@ a = 10
 ```
 
 This code isn't valid F# code for two reasons. First if you bind a value to an identifier with the `let` binding you cannot 
-alter it anymore. It is immutable to assert one principle of functional programming. Secondly the `=` is the equality sign and not the assignment operator. This would be `<-`.
+alter it anymore. It is immutable to assert one principle of functional programming. Second the `=` is the equality sign and not the assignment operator. This would be `<-`.
 
 <a name="GoOver"></a>
 ## 3. Go Overview
