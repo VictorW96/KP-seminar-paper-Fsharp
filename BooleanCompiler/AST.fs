@@ -15,7 +15,7 @@ let rec eval(vars:Map<string,bool>) (ast:Node) : bool =
         | And(lhs, rhs) -> eval vars lhs && eval vars rhs
         | Not(N) -> not(eval vars N)  
         | Var(s) -> Map.find s vars 
-        | None -> false
+        | None -> printf "parsing failed"; false
 
 // Testing --------------------------------------------------
 let exampleAST = And(Var("A"),Or(Var("B"),Var("C")))

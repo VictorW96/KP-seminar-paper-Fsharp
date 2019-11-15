@@ -4,15 +4,18 @@ open AST
 open FParsec
 open System
 
-// grammar
-type Factor = 
-    | Variable of Variable
-    | Factor of Factor //not
-    | Expression of Expression
-
-and Term = Factor * Factor option //or
-and Expression = Term * Term option //and
-and Variable = string
+//  ---------------------------------------------------------
+// The expression should have the following EBNF form:
+//  EBNF
+//  ---------------------------------------------------------
+// 	<expression> ::= <term> { <or> <term> }
+// 	<term> ::= <factor> { <and> <factor> }
+// 	<factor> ::= <var> | <not> <factor> | (<expression>)
+// 	<or>  ::= '|'
+// 	<and> ::= '&'
+// 	<not> ::= '!'
+//  <var> ::= '[a-zA-Z0-9]*'
+//  ---------------------------------------------------------
 
 
 let nextToken(input: List<String>) =
