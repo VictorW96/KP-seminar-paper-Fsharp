@@ -1,8 +1,18 @@
 ﻿module Parser
 
+open AST
+open FParsec
+open System
 
-let input = ["A";"&";"!";"B"]
+type Factor = 
+    | Variable of Variable
+    | Factor of Factor
+    | Expression of Expression
 
-type Result = {
-    Result : 'a
-    }
+and Term = Factor * Factor option
+and Expression = Term * Term option
+and Variable = string
+
+let Or = "&"
+let And = "|"
+let Not = "!"

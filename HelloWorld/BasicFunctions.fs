@@ -1,11 +1,13 @@
 ﻿module BasicFunctions
 
-open System
+let prefix prefixStr baseStr =
+    prefixStr + "," + baseStr
 
-let rec faculty n = 
-    if n < 1 then
-        1
-    else
-        n * faculty(n-1)
+let exclaim s =
+    s + "!"
 
-Console.WriteLine(faculty 3)
+let names = ["Victor"; "Petra"; "Test"]
+
+let result = names
+             |> List.map (prefix "Hello")
+             |> List.map exclaim

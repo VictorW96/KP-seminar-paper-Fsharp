@@ -1,18 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Victor\\Projects\\KP-seminar-paper-Fsharp\\HelloWorld\\HelloWorld.fsproj": {}
+    "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\HelloWorld\\HelloWorld.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\Victor\\Projects\\KP-seminar-paper-Fsharp\\HelloWorld\\HelloWorld.fsproj": {
+    "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\HelloWorld\\HelloWorld.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Victor\\Projects\\KP-seminar-paper-Fsharp\\HelloWorld\\HelloWorld.fsproj",
+        "projectUniqueName": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\HelloWorld\\HelloWorld.fsproj",
         "projectName": "HelloWorld",
-        "projectPath": "C:\\Users\\Victor\\Projects\\KP-seminar-paper-Fsharp\\HelloWorld\\HelloWorld.fsproj",
+        "projectPath": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\HelloWorld\\HelloWorld.fsproj",
         "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Victor\\Projects\\KP-seminar-paper-Fsharp\\HelloWorld\\obj\\",
+        "outputPath": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\HelloWorld\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\Victor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

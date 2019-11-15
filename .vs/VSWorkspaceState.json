@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\BooleanCompiler",
-    "\\HelloWorld"
+    ""
   ],
-  "SelectedNode": "\\BooleanCompiler\\Parser.fs",
+  "SelectedNode": "\\KP-seminar-paper-Fsharp.sln",
   "PreviewInSolutionExplorer": false
 }
