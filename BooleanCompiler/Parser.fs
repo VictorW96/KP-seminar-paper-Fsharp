@@ -4,15 +4,47 @@ open AST
 open FParsec
 open System
 
+// grammar
 type Factor = 
     | Variable of Variable
-    | Factor of Factor
+    | Factor of Factor //not
     | Expression of Expression
 
-and Term = Factor * Factor option
-and Expression = Term * Term option
+and Term = Factor * Factor option //or
+and Expression = Term * Term option //and
 and Variable = string
 
-let Or = "&"
-let And = "|"
-let Not = "!"
+//
+
+let rec parseTerm (input:List<string>)  : Node =
+    parseFactor input 
+
+let rec parseExpression (input:List<string>) : Node =
+    parseTerm input 
+
+let nextToken(input: List<String>) =
+    match input with
+        | head :: tail -> (head, tail)
+        | [] -> ("",[])
+
+let isVar(input:string) =
+    match String.length input with 
+        | 0 -> false
+        | _ -> true
+    
+let parseVariable(input:string) : Node =
+    match input with 
+        | "" -> printf "parsing failed"; None
+        | _ -> Var(input)
+        
+
+let rec parseFactor (input:List<string>)  : Node =
+    let headtail = input |> nextToken
+    match headtail |> fst with 
+        | "" -> printf "parsing failed"; None
+        | "!" -> Not(parseFactor(headtail |> snd))
+        | "(" -> parseExpression(headtail |> snd)
+        | _ -> parseVariable(headtail |> fst)
+
+let parse (input:List<string>) (vars:Map<string,bool>) : bool =
+    parseExpression input |> eval vars
