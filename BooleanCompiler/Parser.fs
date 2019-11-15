@@ -14,13 +14,6 @@ and Term = Factor * Factor option //or
 and Expression = Term * Term option //and
 and Variable = string
 
-//
-
-let rec parseTerm (input:List<string>)  : Node =
-    parseFactor input 
-
-let rec parseExpression (input:List<string>) : Node =
-    parseTerm input 
 
 let nextToken(input: List<String>) =
     match input with
@@ -33,15 +26,21 @@ let isVar(input:string) =
         | _ -> true
     
 let parseVariable(input:string) : Node =
-    match input with 
-        | "" -> printf "parsing failed"; None
-        | _ -> Var(input)
-        
+    match input |> isVar with 
+        | false -> printf "parsing failed"; None
+        | true -> Var(input)
 
-let rec parseFactor (input:List<string>)  : Node =
+let rec parseExpression (input:List<string>) : Node =
+    parseTerm input 
+
+and parseTerm (input:List<string>)  : Node =
+    parseFactor input
+    
+
+and parseFactor (input:List<string>)  : Node =
     let headtail = input |> nextToken
     match headtail |> fst with 
-        | "" -> printf "parsing failed"; None
+        | "" -> None
         | "!" -> Not(parseFactor(headtail |> snd))
         | "(" -> parseExpression(headtail |> snd)
         | _ -> parseVariable(headtail |> fst)
