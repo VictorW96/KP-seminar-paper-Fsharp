@@ -18,35 +18,39 @@ open System
 //  ---------------------------------------------------------
 
 
-let nextToken(input: List<String>) =
-    match input with
-        | head :: tail -> (head, tail)
-        | [] -> ("",[])
+type Result<'a> =
+    | Success of 'a
+    | Failure of string 
 
-let isVar(input:string) =
-    match String.length input with 
-        | 0 -> false
-        | _ -> true
+type Parser<'T> = Parser of (string -> Result<'T * string>)
+
+let andThen parser1 parser2 =
+    let innerFn input =
+        // run parser1 with the input
+        let result1 = run parser1 input
+        
+        // test the result for Failure/Success
+        match result1 with
+        | Failure err -> 
+            // return error from parser1
+            Failure err  
+
+        | Success (value1,remaining1) -> 
+            // run parser2 with the remaining input
+            let result2 =  run parser2 remaining1
+            
+            // test the result for Failure/Success
+            match result2 with 
+            | Failure err ->
+                // return error from parser2
+                Failure err 
+            
+            | Success (value2,remaining2) -> 
+                // combine both values as a pair
+                let newValue = (value1,value2)
+                // return remaining input after parser2
+                Success (newValue,remaining2)
+
+    // return the inner function
+    Parser innerFn 
     
-let parseVariable(input:string) : Node =
-    match input |> isVar with 
-        | false -> printf "parsing failed"; None
-        | true -> Var(input)
-
-let rec parseExpression (input:List<string>) : Node =
-    parseTerm input 
-
-and parseTerm (input:List<string>)  : Node =
-    parseFactor input
-    
-
-and parseFactor (input:List<string>)  : Node =
-    let headtail = input |> nextToken
-    match headtail |> fst with 
-        | "" -> None
-        | "!" -> Not(parseFactor(headtail |> snd))
-        | "(" -> parseExpression(headtail |> snd)
-        | _ -> parseVariable(headtail |> fst)
-
-let parse (input:List<string>) (vars:Map<string,bool>) : bool =
-    parseExpression input |> eval vars
