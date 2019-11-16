@@ -132,3 +132,91 @@ let mapP f parser =
 
 let ( <!> ) = mapP
 
+let ( |>> ) x f = mapP f x
+
+let returnP x =
+    let innerFn input =
+        // ignore the input and return x
+        Success (x,input )
+    // return the inner function
+    Parser innerFn
+
+let applyP fP xP =
+    // create a Parser containing a pair (f,x)
+    (fP .>>. xP)
+    // map the pair by applying f to x
+    |> mapP (fun (f,x) -> f x)
+
+let ( <*> ) = applyP
+
+// lift a two parameter function to Parser World
+let lift2 f xP yP =
+    returnP f <*> xP <*> yP
+
+let addP =
+    lift2 (+)
+
+let startsWith (str:string) (prefix:string) =
+    str.StartsWith(prefix)
+
+let startsWithP =
+    lift2 startsWith
+
+let rec sequence parserList =
+    // define the "cons" function, which is a two parameter function
+    let cons head tail = head::tail
+
+    // lift it to Parser World
+    let consP = lift2 cons
+
+    // process the list of parsers recursively
+    match parserList with
+    | [] ->
+        returnP []
+    | head::tail ->
+        consP head (sequence tail)
+
+let parsers = [ pchar 'A'; pchar 'B'; pchar 'C' ]
+let combined = sequence parsers
+        
+let result = run combined "ABCD"
+
+/// Helper to create a string from a list of chars
+let charListToStr charList =
+     String(List.toArray charList)
+
+// match a specific string
+let pstring str =
+    str
+    // convert to list of char
+    |> List.ofSeq
+    // map each char to a pchar
+    |> List.map pchar
+    // convert to Parser<char list>
+    |> sequence
+    // convert Parser<char list> to Parser<string>
+    |> mapP charListToStr
+
+let rec parseZeroOrMore parser input =
+    // run parser with the input
+    let firstResult = run parser input
+    // test the result for Failure/Success
+    match firstResult with
+    | Failure err ->
+        // if parse fails, return empty list
+        ([],input)
+    | Success (firstValue,inputAfterFirstParse) ->
+        // if parse succeeds, call recursively
+        // to get the subsequent values
+        let (subsequentValues,remainingInput) =
+            parseZeroOrMore parser inputAfterFirstParse
+        let values = firstValue::subsequentValues
+        (values,remainingInput)
+
+let many parser =
+
+    let rec innerFn input =
+        // parse the input -- wrap in Success as it always succeeds
+        Success (parseZeroOrMore parser input)
+
+    Parser innerFn
