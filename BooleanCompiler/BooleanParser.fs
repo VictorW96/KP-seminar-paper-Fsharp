@@ -1,6 +1,7 @@
 ﻿module BooleanParser
 
 open FParsec
+open AST
 
 //  ---------------------------------------------------------
 // The expression should have the following EBNF form:
@@ -19,3 +20,7 @@ let test p str =
     match run p str with
     | Success(result, _, _)   -> printfn "Success: %A" result
     | Failure(errorMsg, _, _) -> printfn "Failure: %s" errorMsg
+
+
+let expect s =
+    spaces >>. pstring s

@@ -3,8 +3,9 @@
 open System
 open BooleanParser
 open FParsec
+open AST
 
 [<EntryPoint>]
 let main argv =
-    test pfloat "23"
+    expect "  Test"
     0
