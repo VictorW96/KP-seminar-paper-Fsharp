@@ -40,9 +40,17 @@ let rec makeNot num node =
     if num <= 0 then node
     else Not(makeNot (num-1) node)
 
-let ExpectIdentifier = 
-    many satisfy
+let isValidChar c =
+    ['A'..'Z'] @ ['a'..'z']
+    |> Seq.exists (fun ch -> ch = c)
     
+let ws = spaces 
+let str_ws s = pstring s .>> ws
+let str_ws1 s = pstring s .>> spaces1
 
-let parseVariable =
-    let innerFnc input =
+let pidentifier =
+    let isIdentifierFirstChar c = isLetter c || c = '_'
+    let isIdentifierChar c = isLetter c || isDigit c || c = '_'
+    many1Satisfy2L isIdentifierFirstChar isIdentifierChar "identifier"
+let pidentifier_ws = pidentifier .>> ws
+let pvar = pidentifier |>> (fun x -> Var(x))
