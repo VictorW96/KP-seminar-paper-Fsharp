@@ -6,4 +6,5 @@ open FParsec
 
 [<EntryPoint>]
 let main argv =
-    test pfloat "2"
+    test pfloat "23"
+    0
