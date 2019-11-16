@@ -5001,21 +5001,17 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Victor\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Victor\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj",
+      "projectUniqueName": "C:\\Users\\Victor\\Projects\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj",
       "projectName": "BooleanCompiler",
-      "projectPath": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj",
+      "projectPath": "C:\\Users\\Victor\\Projects\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj",
       "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\BooleanCompiler\\obj\\",
+      "outputPath": "C:\\Users\\Victor\\Projects\\KP-seminar-paper-Fsharp\\BooleanCompiler\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\Victor\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
