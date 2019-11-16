@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="BooleanParser.fs" />
     <Compile Include="AST.fs" />
+    <Compile Include="BooleanParser.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
