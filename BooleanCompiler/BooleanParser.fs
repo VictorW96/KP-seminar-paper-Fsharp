@@ -15,4 +15,7 @@ open FParsec
 //  <var> ::= '[a-zA-Z0-9]*'
 //  ---------------------------------------------------------
 
-let result = run pfloat "02"
+let test p str =
+    match run p str with
+    | Success(result, _, _)   -> printfn "Success: %A" result
+    | Failure(errorMsg, _, _) -> printfn "Failure: %s" errorMsg

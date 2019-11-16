@@ -19,3 +19,6 @@ C:\Users\Victor\source\repos\KP-seminar-paper-Fsharp\BooleanCompiler\obj\Debug\n
 C:\Users\Victor\source\repos\KP-seminar-paper-Fsharp\BooleanCompiler\obj\Debug\netcoreapp3.0\BooleanCompiler.AssemblyInfoInputs.cache
 C:\Users\Victor\source\repos\KP-seminar-paper-Fsharp\BooleanCompiler\obj\Debug\netcoreapp3.0\BooleanCompiler.AssemblyInfo.fs
 C:\Users\Victor\source\repos\KP-seminar-paper-Fsharp\BooleanCompiler\obj\Debug\netcoreapp3.0\BooleanCompiler.fsproj.CopyComplete
+C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\obj\Debug\netcoreapp3.0\BooleanCompiler.fsprojAssemblyReference.cache
+C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\obj\Debug\netcoreapp3.0\BooleanCompiler.AssemblyInfoInputs.cache
+C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\obj\Debug\netcoreapp3.0\BooleanCompiler.AssemblyInfo.fs

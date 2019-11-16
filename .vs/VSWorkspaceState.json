@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BooleanCompiler"
+    "\\BooleanCompiler",
+    "\\HelloWorld"
   ],
-  "SelectedNode": "\\BooleanCompiler\\Parser.fs",
   "PreviewInSolutionExplorer": false
 }
