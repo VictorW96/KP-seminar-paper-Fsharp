@@ -6,10 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="BooleanParser.fs" />
     <Compile Include="AST.fs" />
     <Compile Include="Parser.fs" />
     <Compile Include="Program.fs" />
-    <Compile Include="Lexer.fs" />
   </ItemGroup>
 
   <ItemGroup>
