@@ -13,10 +13,10 @@ The `BooleanCompiler.exe` takes two command line arguments:
 
 ### Example Call
 
-**Call**: ```bash ./BooleanCompiler.exe 'A:true' 'A'```  
+**Call**: ```./BooleanCompiler.exe 'A:true' 'A'```  
 **Output**: ```Success: Var "A" evaluated as true```
 
-**Call**: ```bash ./BooleanCompiler.exe 'A:true|B:false|C:true' '!A&(!!B|C)'```  
+**Call**: ```./BooleanCompiler.exe 'A:true|B:false|C:true' '!A&(!!B|C)'```  
 **Output**: ```Success: And (Not (Var "A"),Or (Not (Not (Var "B")),Var "C")) evaluated as false```
 
 # Comparison of functional F# to GO
