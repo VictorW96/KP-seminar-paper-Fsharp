@@ -6,14 +6,15 @@
 ## Usage
 
 When you are ready you can execute the `BooleanCompiler.exe` from the Command line located at `KP-seminar-paper-Fsharp\BooleanCompiler\bin\Release\netcoreapp3.0`
-The `BooleanCompiler.exe` takes two command line arguments `varBoolMap` of the form `"A:true|B:false|C:true"` and `stringToParse` of the form `"!A&(!!B|C)"`.
+The `BooleanCompiler.exe` takes two command line arguments:
 
-- `varBoolMap` is a Map on boolean values for the definition of the variables
-- `stringtoParse` is the Boolean Expression, which should be parsed
+- `varBoolMap` is a Map on boolean values for the definition of the variables. It is of the form `"A:true|B:false|C:true"`.
+- `stringtoParse` is the Boolean Expression, which should be parsed. It is of the form `"!A&(!!B|C)"`.
 
 ### Example Call
 
 **Call**: ```./BooleanCompiler.exe "A:true" "A"```
+
 **Output**: ```Success: Var "A" evaluated as true```
 
 # Comparison of functional F# to GO
