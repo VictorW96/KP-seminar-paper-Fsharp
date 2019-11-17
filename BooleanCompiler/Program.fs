@@ -7,4 +7,4 @@ open AST
 
 [<EntryPoint>]
 let main argv =
-    0
+    run parseExpression "A&B"

@@ -42,18 +42,22 @@ let makeOr (argument: Node*Node option) =
     
 let ws = spaces
 
+let first (x,y) = x
+
+let second (x,y) = y
+
 let parseIdentifier:Parser<string, unit> = ws >>. many1SatisfyL isAsciiLetter "identifier"
 
 let parseVariable = parseIdentifier |>> fun x -> Var(x)
 
 let parseExclamationMarks:Parser<int, unit> =  many (expect "!") |>> fun x -> List.length x
 
-let rec parseExpression = parseOr .>>. opt ws
+let rec parseExpression = parseOr .>> opt ws
 
 and parseOr = (parseAnd .>>. opt (expect " |" >>. parseOr)) |>> makeOr
 
 and parseAnd = (parseNot .>>. opt (expect " &" >>. parseAnd)) |>> makeAnd
 
-and  parseAtom = parseVariable <|> (expect "(" >>. parseExpression .>> expect ")")
+and parseAtom = parseVariable <|> (expect "(" >>. parseExpression .>> expect ")")
 
 and parseNot = parseExclamationMarks .>>. parseAtom |>> fun (x,y) -> makeNot x y 
