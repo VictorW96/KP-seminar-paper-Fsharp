@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BooleanCompiler": {
+      "commandName": "Project",
+      "commandLineArgs": "\"A:true\" \"!A\""
+    }
+  }
+}

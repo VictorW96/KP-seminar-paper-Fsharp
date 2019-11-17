@@ -16,7 +16,7 @@ let createMap (str : string) =
     |> Map
 
 [<EntryPoint>]
-let main (args:string[]) =
+let main args =
     if args.Length <> 2 then
         failwith "Error: Expected arguments <varBoolMap> of the form \"A:true|B:false|C:true\" and <stringToParse> of the form \"!A&(!!B|C)\""
     let stringvarBoolMap, stringToParse = args.[0], args.[1]
