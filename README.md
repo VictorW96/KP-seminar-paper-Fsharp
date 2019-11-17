@@ -1,11 +1,8 @@
 ## Setup
-* On **Windows** : Just clone this Repository
-* On **Linux** : Clone this Repository and either load it in Visual Studio with the FSharp Compiler or use something like [Mono](https://www.mono-project.com/)
-* On **Mac** : Same as Linux
+* On **Windows** : Clone this Repository you will find the command line program `BooleanCompiler.exe` in`KP-seminar-paper-Fsharp\BooleanCompiler\bin\Release\netcoreapp3.0\win-x64\publish`
+* On **Linux**/**Mac** : Clone this Repository. You will need the [dotnet core runtime](https://dotnet.microsoft.com/download). Then you can either execute the `Boolean Compiler.exe` in `KP-seminar-paper-Fsharp\BooleanCompiler\bin\Release\netcoreapp3.0` if the dotnet environment variable is set or you can execute the dll in the same folder with `dotnet BooleanCompiler.dll `
 
 ## Usage
-
-When you are ready you can execute the `BooleanCompiler.exe` from the Command line located at `KP-seminar-paper-Fsharp\BooleanCompiler\bin\Release\netcoreapp3.0`
 The `BooleanCompiler.exe` takes two command line arguments:
 
 - `varBoolMap` is a Map on boolean values for the definition of the variables. It is of the form `'A:true|B:false|C:true'`.
