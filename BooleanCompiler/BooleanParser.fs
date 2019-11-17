@@ -40,12 +40,9 @@ let rec makeNot num node =
     if num <= 0 then node
     else Not(makeNot (num-1) node)
 
-let isValidChar c =
-    ['A'..'Z'] @ ['a'..'z']
-    |> Seq.exists (fun ch -> ch = c)
-    
 
 let ws = spaces
 
-let parseidentifier = many1Satisfy isAsciiLetter
-let parsevariable = parseidentifier |>> (fun x -> Var(x))
+let parseidentifier:Parser<string, unit> = ws >>. many1SatisfyL isAsciiLetter "identifier"
+
+let parsevariable = parseidentifier |>> fun x -> Var(x)
