@@ -14,7 +14,7 @@ The `BooleanCompiler.exe` takes two command line arguments `varBoolMap` of the f
 ### Example Call
 
 Call: `./BooleanCompiler.exe "A:true" "A"`
-Outpur: `Success: Var "A" evaluated as true`
+Output: `Success: Var "A" evaluated as true`
 
 # Comparison of functional F# to GO
 
