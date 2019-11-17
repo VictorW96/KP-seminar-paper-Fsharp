@@ -1,5 +1,5 @@
 ## Setup
-* On **Windows** : Clone this Repository you will find the command line program `BooleanCompiler.exe` in`KP-seminar-paper-Fsharp\BooleanCompiler\bin\Release\netcoreapp3.0\win-x64\publish`
+* On **Windows** : Clone this Repository. You will find the command line program `BooleanCompiler.exe` in`KP-seminar-paper-Fsharp\BooleanCompiler\bin\Release\netcoreapp3.0\win-x64\publish`
 * On **Linux**/**Mac** : Clone this Repository. You will need the [dotnet core runtime](https://dotnet.microsoft.com/download). Then you can either execute the `Boolean Compiler.exe` in `KP-seminar-paper-Fsharp\BooleanCompiler\bin\Release\netcoreapp3.0` if the dotnet environment variable is set or you can execute the dll in the same folder with `dotnet BooleanCompiler.dll `
 
 ## Usage
