@@ -23,7 +23,7 @@ let test p str =
     | Failure(errorMsg, _, _) -> printfn "Failure: %s" errorMsg
 
 
-let expect s =
+let expect s :Parser<string, unit> =
     spaces >>. pstring s
 
 let makeOr argument =
@@ -47,8 +47,8 @@ let parseIdentifier:Parser<string, unit> = ws >>. many1SatisfyL isAsciiLetter "i
 
 let parseVariable = parseIdentifier |>> fun x -> Var(x)
 
-let parseExclamationMarks = expect "!"
+let parseExclamationMarks:Parser<int, unit> =  many (expect "!") |>> fun x -> List.length x
 
-let parseAtom = parseVariable .>>. 
+let parseAtom = parseVariable 
 
-let parseExpression =
+let parseNot = parseExclamationMarks .>>. parseAtom |>> fun (x,y) -> makeNot x y 
