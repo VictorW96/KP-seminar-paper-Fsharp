@@ -43,6 +43,12 @@ let rec makeNot num node =
 
 let ws = spaces
 
-let parseidentifier:Parser<string, unit> = ws >>. many1SatisfyL isAsciiLetter "identifier"
+let parseIdentifier:Parser<string, unit> = ws >>. many1SatisfyL isAsciiLetter "identifier"
 
-let parsevariable = parseidentifier |>> fun x -> Var(x)
+let parseVariable = parseIdentifier |>> fun x -> Var(x)
+
+let parseExclamationMarks = expect "!"
+
+let parseAtom = parseVariable .>>. 
+
+let parseExpression =

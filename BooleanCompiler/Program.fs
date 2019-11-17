@@ -7,5 +7,4 @@ open AST
 
 [<EntryPoint>]
 let main argv =
-    expect "  Test"
     0
