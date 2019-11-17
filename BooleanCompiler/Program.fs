@@ -7,4 +7,5 @@ open AST
 
 [<EntryPoint>]
 let main argv =
-    run parseExpression "A&B"
+    test parseExpression "!!A&(!B|C)"
+    0
