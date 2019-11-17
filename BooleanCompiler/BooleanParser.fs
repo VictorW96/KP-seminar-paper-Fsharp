@@ -49,6 +49,12 @@ let parseVariable = parseIdentifier |>> fun x -> Var(x)
 
 let parseExclamationMarks:Parser<int, unit> =  many (expect "!") |>> fun x -> List.length x
 
-let parseAtom = parseVariable 
+let rec parseExpression = parseOr
 
-let parseNot = parseExclamationMarks .>>. parseAtom |>> fun (x,y) -> makeNot x y 
+and parseOr = parseAnd
+
+and parseAnd = parseNot .>>. opt (expect " &" >>. parseAnd ) |>> makeAnd
+
+and  parseAtom = parseVariable <|> (expect "(" >>. parseExpression .>> expect ")")
+
+and parseNot = parseExclamationMarks .>>. parseAtom |>> fun (x,y) -> makeNot x y 
