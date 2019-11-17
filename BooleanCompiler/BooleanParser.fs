@@ -26,21 +26,20 @@ let test p str =
 let expect s :Parser<string, unit> =
     spaces >>. pstring s
 
-let makeOr argument =
-    match snd argument with 
-        | None -> fst argument 
-        | _ -> Or(fst argument, snd argument)
-
-let makeAnd argument =
-    match snd argument with
-        | None -> fst argument
-        | _ -> And(fst argument, snd argument)
-
 let rec makeNot num node =
     if num <= 0 then node
     else Not(makeNot (num-1) node)
 
+let makeAnd (argument: Node*Node option) =
+    match snd argument with
+    | None -> fst argument
+    | Some node -> And(fst argument, node) 
 
+let makeOr (argument: Node*Node option) =
+    match snd argument with
+    | None -> fst argument
+    | Some node -> Or(fst argument, node) 
+    
 let ws = spaces
 
 let parseIdentifier:Parser<string, unit> = ws >>. many1SatisfyL isAsciiLetter "identifier"
@@ -49,11 +48,11 @@ let parseVariable = parseIdentifier |>> fun x -> Var(x)
 
 let parseExclamationMarks:Parser<int, unit> =  many (expect "!") |>> fun x -> List.length x
 
-let rec parseExpression = parseOr
+let rec parseExpression = parseOr .>>. opt ws
 
-and parseOr = parseAnd
+and parseOr = (parseAnd .>>. opt (expect " |" >>. parseOr)) |>> makeOr
 
-and parseAnd = parseNot .>>. opt (expect " &" >>. parseAnd ) |>> makeAnd
+and parseAnd = (parseNot .>>. opt (expect " &" >>. parseAnd)) |>> makeAnd
 
 and  parseAtom = parseVariable <|> (expect "(" >>. parseExpression .>> expect ")")
 
