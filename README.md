@@ -1,4 +1,4 @@
-### Setup
+## Setup
 * On **Windows** : Just clone this Repository
 * On **Linux** : Clone this Repository and either load it in Visual Studio with the FSharp Compiler or use something like [Mono](https://www.mono-project.com/)
 * On **Mac** : Same as Linux
@@ -13,8 +13,7 @@ The `BooleanCompiler.exe` takes two command line arguments:
 
 ### Example Call
 
-**Call**: ```./BooleanCompiler.exe "A:true" "A"```
-
+**Call**: ```./BooleanCompiler.exe "A:true" "A"```  
 **Output**: ```Success: Var "A" evaluated as true```
 
 # Comparison of functional F# to GO
