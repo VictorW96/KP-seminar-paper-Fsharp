@@ -1,6 +1,20 @@
-## Usage of the BooleanCompiler
+### Setup
+* On *Windows* : Just clone this Repository
+* On *Linux* : Clone this Repository and either load it in Visual Studio with the FSharp Compiler or use something like [Mono](https://www.mono-project.com/)
+* On *Mac* : Same as Linux
 
+## Usage
 
+When you are ready you can execute the `BooleanCompiler.exe` from the Command line located at `KP-seminar-paper-Fsharp\BooleanCompiler\bin\Release\netcoreapp3.0`
+The `BooleanCompiler.exe` takes two command line arguments `varBoolMap` of the form `"A:true|B:false|C:true"` and `stringToParse` of the form `"!A&(!!B|C)"`.
+
+- `varBoolMap` is a Map on boolean values for the definition of the variables
+- `stringtoParse` is the Boolean Expression, which should be parsed
+
+### Example Call
+
+Call: `./BooleanCompiler.exe "A:true" "A"`
+Outpur: `Success: Var "A" evaluated as true`
 
 # Comparison of functional F# to GO
 

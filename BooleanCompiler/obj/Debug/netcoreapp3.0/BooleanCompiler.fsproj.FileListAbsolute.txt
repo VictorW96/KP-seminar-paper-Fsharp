@@ -30,7 +30,6 @@ C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\bin\Debug\netco
 C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\bin\Debug\netcoreapp3.0\BooleanCompiler.pdb
 C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\bin\Debug\netcoreapp3.0\FParsec.dll
 C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\bin\Debug\netcoreapp3.0\FParsecCS.dll
-C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\bin\Debug\netcoreapp3.0\FSharp.Compiler.Service.dll
 C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\bin\Debug\netcoreapp3.0\FSharp.Core.dll
 C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\bin\Debug\netcoreapp3.0\cs\FSharp.Core.resources.dll
 C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\bin\Debug\netcoreapp3.0\de\FSharp.Core.resources.dll

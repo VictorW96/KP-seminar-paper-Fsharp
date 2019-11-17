@@ -37,10 +37,6 @@
               "target": "Package",
               "version": "[1.0.3, )"
             },
-            "FSharp.Compiler.Service": {
-              "target": "Package",
-              "version": "[33.0.0, )"
-            },
             "FSharp.Core": {
               "target": "Package",
               "version": "[4.7.0, )"

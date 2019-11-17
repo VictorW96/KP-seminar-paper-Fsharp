@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <PackageReference Include="FParsec" Version="1.0.3" />
-    <PackageReference Include="FSharp.Compiler.Service" Version="33.0.0" />
   </ItemGroup>
 
 </Project>
