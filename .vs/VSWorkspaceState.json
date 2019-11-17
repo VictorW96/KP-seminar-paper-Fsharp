@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BooleanCompiler",
-    "\\BooleanCompiler\\bin",
-    "\\BooleanCompiler\\bin\\Release",
-    "\\BooleanCompiler\\bin\\Release\\netcoreapp3.0",
-    "\\HelloWorld"
+    "\\BooleanCompiler"
   ],
-  "SelectedNode": "\\BooleanCompiler\\obj",
   "PreviewInSolutionExplorer": false
 }
