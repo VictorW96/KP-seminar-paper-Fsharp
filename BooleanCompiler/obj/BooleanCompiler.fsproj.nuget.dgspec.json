@@ -1,18 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Victor\\Projects\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj": {}
+    "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\Victor\\Projects\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj": {
+    "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Victor\\Projects\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj",
+        "projectUniqueName": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj",
         "projectName": "BooleanCompiler",
-        "projectPath": "C:\\Users\\Victor\\Projects\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj",
+        "projectPath": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\BooleanCompiler\\BooleanCompiler.fsproj",
         "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Victor\\Projects\\KP-seminar-paper-Fsharp\\BooleanCompiler\\obj\\",
+        "outputPath": "C:\\Users\\Victor\\source\\repos\\KP-seminar-paper-Fsharp\\BooleanCompiler\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\Victor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -52,31 +55,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[3.0.0, 3.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
         }
       }
     }

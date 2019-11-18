@@ -23,10 +23,9 @@ The `BooleanCompiler.exe` takes two command line arguments:
 2. [ F# Overview ](#FOver)
 	1. [Functional programming basics](#fprog)
 	2. [F# concepts](#fconc)
-3. [ Go Overview ](#GoOver)
 3. [ Parser Example ](#ParsEx)
-5. [ Comparison ](#Comp)
-6. [ Conclusion ](#Conc)
+4. [ Comparison ](#Comp)
+5. [ Conclusion ](#Conc)
 
 <a name="intro"></a>
 ## 1. Introduction
@@ -52,11 +51,11 @@ One goal of functional programming is also to minimze the use of mutable state. 
 <a name="fconc"></a>
 ### 2. F# concepts
 
-In this section we will focus on the propertys of F#'s language features.
+In this section we will focus on the propertys of F#'s language features. F# has a lot of language design features because it is a multi paradigm programming language. But in this section we will first and foremost focus on the functional programming features.
 
 #### Let Bindings and immutability
 
-```fhsarp
+```Fsharp
 let a = 10
 a = 20
 ```
@@ -66,28 +65,52 @@ alter it anymore. It is immutable to assert one principle of functional programm
 
 #### Type interference
 
-```fhsarp
+```Fsharp
 let a = 10
 a = 20
 ```
 
 Like we have seen above, we do not have to give a type definition for the variable `a`. F# derives it because the value `10` is of type `int` so `a` must be an `int` too. F# also can do this in more complex constructs like functions, consider this function definition.
 
-```fhsarp
+
+```Fsharp
 let prefix prefixStr baseStr =
     prefixStr + "," + baseStr
 ```
 
-F# interferes that the arguments `prefixStr` and `baseStr` have to be of type `string` and that the function returns a `string` because of the method body and the operation in which they are used. You can always add the type definition, if you want to. In this way F# combines the security of a strongly typed language and the read- and writability of a loosely typed language, which is similar to Go.
+F# interferes that the arguments `prefixStr` and `baseStr` have to be of type `string` and that the function returns a `string` because of the method body and the operation in which they are used. You can always add the type definition, if you want to. In this way F# combines the security of a strongly typed language and the read- and writability of a loosely typed language.
 
-<a name="GoOver"></a>
-## 3. Go Overview
+#### First-class functions
+
+To be called a functional programming language, the programming languages functions have to fullfill the following propertys:
+
+* Bind functions to identifiers
+* Store functions in data structures like lists
+* Pass functions as arguments in another function call
+* Return a function from a function call
+
+Of course F# supports all of the above propertys. The first one we have allready seen in the `let prefix` example. You can see an example of these propertys [here](https://docs.microsoft.com/en-us/dotnet/fsharp/introduction-to-functional-programming/first-class-functions).
+
+#### The Pipe Operator
+
+F# gives a convenient way to chain multiple functions together with the pipe operator `|>` . So you can easily build new functions from existing functions.
+
+Example usage:
+
+```Fsharp
+ let print message =
+     printf "%s" message
+
+"Hello World" |> print
+```
+
+Will print `"Hello World". This pipe operator takes the output of the left function and uses it as an argument for the right function. This is usefull when building more complex functions out of simpler ones.
 
 <a name="ParsEx"></a>
-## 4. Parser Example
+## 3. Parser Example
 
 <a name="Comp"></a>
-## 5. Comparison
+## 4. Comparison
 
 <a name="Conc"></a>
-## 6. Conclusion
+## 5. Conclusion
