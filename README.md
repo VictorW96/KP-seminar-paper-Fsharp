@@ -16,6 +16,9 @@ The `BooleanCompiler.exe` takes two command line arguments:
 **Call**: ```./BooleanCompiler.exe 'A:true|B:false|C:true' '!A&(!!B|C)'```  
 **Output**: ```Success: And (Not (Var "A"),Or (Not (Not (Var "B")),Var "C")) evaluated as false```
 
+
+![alt text](res/FHRO_logo.PNG "Technische Hochschule Rosenheim")
+
 # Comparison of functional F# to GO
 
 ## Table of Contents
