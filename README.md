@@ -24,8 +24,11 @@ The `BooleanCompiler.exe` takes two command line arguments:
 	1. [Functional programming basics](#fprog)
 	2. [F# concepts](#fconc)
 3. [ Parser Example ](#ParsEx)
+    1. [AST](#AST)
+    2. [FParsec](#FParsec)
 4. [ Comparison ](#Comp)
 5. [ Conclusion ](#Conc)
+6. [ References ](#Ref)
 
 <a name="intro"></a>
 ## 1. Introduction
@@ -39,7 +42,8 @@ Primarily it was designed to be a functional programming language but you can al
 but the last one should only be rarely used and its considered to be bad design. F# was invented by a Microsoft Research Team and is compatible with
 the whole .NET Plattform. So you can interact for example with Visual Basic or C#, which makes F# very powerfull for actual application writing. 
 This was the main idea, to build a functional programming language, that is integrated into the Microsoft Ecosystem.
-Its language features are very similar to [OCaml](https://de.wikipedia.org/wiki/Objective_CAML) and it was ineed a role model for F#. 
+Its language features are very similar to [OCaml](https://de.wikipedia.org/wiki/Objective_CAML) and it was indeed a role model for F#. 
+Because F# is a general purpose language it can be applied in a wide area. For example in web development, analytical programming and scripting.
 
 <a name="fprog"></a>
 ### 1. Functional programming basics
@@ -93,7 +97,7 @@ Of course F# supports all of the above propertys. The first one we have allready
 
 #### The Pipe Operator
 
-F# gives a convenient way to chain multiple functions together with the pipe operator `|>` . So you can easily build new functions from existing functions.
+F# gives a convenient way to chain multiple functions together with the pipe operator `|>` and the forward composition operator `>>`. So you can easily build new functions from existing functions.
 
 Example usage:
 
@@ -106,11 +110,74 @@ Example usage:
 
 Will print `"Hello World". This pipe operator takes the output of the left function and uses it as an argument for the right function. This is usefull when building more complex functions out of simpler ones.
 
+#### Types
+
+The type system in F# let us define data structures that have some sort of attributes. Together with functions you can encapsulate and polymorph your data without classes. For example the discriminate union type lets you easily define a class hierachy.
+
+```Fsharp
+type Shape =
+  // The value here is the radius.
+| Circle of float
+  // The value here is the side length.
+| EquilateralTriangle of double
+  // The value here is the side length.
+| Square of double
+  // The values here are the height and width.
+| Rectangle of double * double
+```
+
+This shows another advantage of F#, which is it very short and readable code. If we had written this in language like Java, we needed much more code for the same structure.   
+To learn more about types you can look up this [website](https://fsharpforfunandprofit.com/posts/overview-of-types-in-fsharp/).
+
 <a name="ParsEx"></a>
 ## 3. Parser Example
 
+The functional Boolean Parser in F# consists of three parts. The abstract syntax tree, the FParsec library, and the BooleanParser implementation. 
+
+<a name="AST"></a>
+### 1. Abstract syntax tree
+
+The abstract syntax tree is very simple with the F# concepts. like we have seen in the previous section about Types, you can easily make class hierachys with discriminate unit types. This will result in the following.
+
+```Fsharp
+type Node = 
+    | Or of Node * Node 
+    | And of Node * Node 
+    | Not of Node 
+    | Var of string
+```
+
+This means, that the type Node has four manifestations. It's either an `Or` or an `And`, which consists of a tuple of Nodes, a `Not`, which consists of one Node, or a `Var`, which is a string.  
+Now we have to add some functionality to evaluate a Node type. Because we know the manifestations of a Node we can use a typically functional programming paradigm, the pattern matching, which is done with the `match .. with` keyword in F#. 
+
+```Fsharp
+let rec eval(vars:Map<string,bool>) (ast:Node) : bool =
+    match ast with
+        | Or(lhs,rhs) -> eval vars lhs || eval vars rhs
+        | And(lhs, rhs) -> eval vars lhs && eval vars rhs
+        | Not(N) -> not(eval vars N)  
+        | Var(s) -> Map.find s vars 
+```
+
+We define a recursive functions that gets a variable map to evaluate the Var Nodes and a root node to start with. 
+
+<a name="FParsec"></a>
+### 2. FParsec
+
+To understand the Boolean Parser implementation we have first to understand the FParsec library and how it implements its parser combinators. 
+
+#### The Result type
+
+
 <a name="Comp"></a>
-## 4. Comparison
+## 4. Comparison to Golang
 
 <a name="Conc"></a>
 ## 5. Conclusion
+
+<a name="Ref"></a>
+## 6. References
+
+* Smith, Chris (2009). "Programming F#". O'Reilly.
+* [Official website](https://fsharp.org/) The F# Software Foundation
+* [Fsharpforfunandprofit](https://fsharpforfunandprofit.com/)
