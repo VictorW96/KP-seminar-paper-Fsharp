@@ -17,7 +17,7 @@ The `BooleanCompiler.exe` takes two command line arguments:
 **Output**: ```Success: And (Not (Var "A"),Or (Not (Not (Var "B")),Var "C")) evaluated as false```
 
 
-![alt text](res/FHRO_logo.PNG "Technische Hochschule Rosenheim")
+![FH Logo](res/FHRO_logo.PNG "Technische Hochschule Rosenheim")
 
 # Comparison of functional F# to GO
 
@@ -29,6 +29,7 @@ The `BooleanCompiler.exe` takes two command line arguments:
 3. [ Parser Example ](#ParsEx)
     1. [AST](#AST)
     2. [FParsec](#FParsec)
+    3. [Boolean Parser](#BoolP)
 4. [ Comparison ](#Comp)
 5. [ Conclusion ](#Conc)
 6. [ References ](#Ref)
@@ -169,8 +170,34 @@ We define a recursive functions that gets a variable map to evaluate the Var Nod
 
 To understand the Boolean Parser implementation we have first to understand the FParsec library and how it implements its parser combinators. 
 
+#### The Parser type
+
+We define a Parser as a function of the form `string -> Result<'a>`. The string can be other kind of input but this is the basic definition, that let us combine different parsers. But what is the Result type?
+
 #### The Result type
 
+```Fsharp
+type Result<'a> =
+    | Success of 'a
+    | Failure of string 
+```
+
+A Result is a discriminate union of Success of type 'a or Failure of type string. In the Fparsec library this result type has one mor generic type parameter, which defines the user state, but isn't important for understanding the functionality of the parser.
+
+Summarized a Parser returns a Result of a type of your choosing embedded in Success or a Failure with an error message. In the Boolparser implementation we want to parse the string into a `Node` type, to build an AST and evaluating it afterwards.
+
+#### Combinators
+
+We can combine different parsers together with the parser combinators of FParsec. Some important ones are described here
+
+* `ParserA .>>. ParserB`: executes ParserA and then Parser B and combines their `Result` in a tuple 
+* `ParserA >>. ParserB`: executes ParserA and then Parser B and returns the `Result` of `ParserB`. There is also a `.>>` combinator, to return the result of `ParserA`.
+* `ParserA |>> func f`: applies the function `f` to the `Result Success` type. This is used to construct the AST.
+
+These were some of the important combinators. To learn more about FParsec and parser combinators you can look up the [FParsec website](https://www.quanttec.com/fparsec/) and this [blog post](https://fsharpforfunandprofit.com/posts/understanding-parser-combinators/) about parser combinators.
+
+<a name="BoolP"></a>
+### 3. Boolean Parser
 
 <a name="Comp"></a>
 ## 4. Comparison to Golang
@@ -184,3 +211,4 @@ To understand the Boolean Parser implementation we have first to understand the 
 * Smith, Chris (2009). "Programming F#". O'Reilly.
 * [Official website](https://fsharp.org/) The F# Software Foundation
 * [Fsharpforfunandprofit](https://fsharpforfunandprofit.com/)
+* [FParsec website](https://www.quanttec.com/fparsec/)
