@@ -196,6 +196,43 @@ These were some of the important combinators. To learn more about FParsec and pa
 <a name="BoolP"></a>
 ### 3. Boolean Parser
 
+In this section we will look upon the Boolean Parser implementation. We will focus on some of the basic ideas.The full code can be viewed in `BooleanCompiler/BooleanParser.fs`.
+
+#### Combinating 
+
+We constuct new parsers with the help of the FParsec library like already seen in the last section. For example we define a `identifer` parser.
+
+```Fsharp
+let parseIdentifier:Parser<string, unit> = ws >>. many1SatisfyL isAsciiLetter "identifier"
+```
+
+It parses zero or more whitespace characters but doesn't return it in the Result and then parses at least one of the following characters, if they are ASCII characters.
+
+#### Constructing the AST
+
+To parse the input string into an AST Node we need the `|>>` Operator. For example:
+
+```Fsharp
+let parseVariable = (parseIdentifier |>> fun x -> Var(x)) 
+```
+This parses a variable like we have seen above and then applys the lambad expression to the `Result` of the `parseidentifier`. so the signature of this Parser is `string -> Result<Node>` because we transform the `node` output of `parseidentifier` into a `Node`  
+
+#### Recursion
+
+To construct the full syntax tree we need recursion. This is accomplished by implementing the grammar in the following EBNF form.
+
+```
+<expression> ::= <term> { <or> <term> }
+<term> ::= <factor> { <and> <factor> }
+<factor> ::= <var> | <not> <factor> | (<expression>)
+<or>  ::= '|'
+<and> ::= '&'
+<not> ::= '!'
+<var> ::= '[a-zA-Z0-9]*'
+``` 
+
+The idea is to implement these as recursive functions and this is done in the Boolean Parser with the `parseExpression`,`parseOr`,`parseAnd`,`parseAtom` and `parseNot`. These call eachother similar to the grammar and create AST nodes with helper functions like `makeOr`.   
+
 <a name="Comp"></a>
 ## 4. Comparison to Golang
 

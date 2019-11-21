@@ -50,7 +50,7 @@ let expect s :Parser<string, unit> =
 let parseIdentifier:Parser<string, unit> = ws >>. many1SatisfyL isAsciiLetter "identifier"
 
 // parseVariable parses the following grammar:
-// Variable := [a-zA-Z_][a-zA-Z_0-9]* and puts the result into a AST Variable 
+// Variable := [a-zA-Z_][a-zA-Z]* and puts the result into a AST Variable 
 let parseVariable = (parseIdentifier |>> fun x -> Var(x)) 
 
 // parseExclamationMarks parses the following grammar:
