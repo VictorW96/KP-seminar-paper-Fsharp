@@ -17,7 +17,7 @@ The `BooleanCompiler.exe` takes two command line arguments:
 **Output**: ```Success: And (Not (Var "A"),Or (Not (Not (Var "B")),Var "C")) evaluated as false```
 
 
-![FH Logo](/res/FHRO_logo.PNG "Technische Hochschule Rosenheim")
+![FH Logo](https://github.com/VictorW96/KP-seminar-paper-Fsharp/res/FHRO_logo.PNG "Technische Hochschule Rosenheim")
 
 # Comparison of functional F# to GO
 
