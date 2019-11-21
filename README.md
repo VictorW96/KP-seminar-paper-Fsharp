@@ -5,7 +5,7 @@
 ## Usage
 The `BooleanCompiler.exe` takes two command line arguments:
 
-- `varBoolMap` is a Map on boolean values for the definition of the variables. It is of the form `'A:true|B:false|C:true'`.
+- `varBoolMap` is a Map on Boolean values for the definition of the variables. It is of the form `'A:true|B:false|C:true'`.
 - `stringtoParse` is the Boolean Expression, which should be parsed. It is of the form `'!A&(!!B|C)'`.
 
 ### Example Call
@@ -39,9 +39,9 @@ The `BooleanCompiler.exe` takes two command line arguments:
 ## 2. F# Overview
 
 F# is a multi paradigm programming language. That means it takes multiple parts of different code design and puts it together.
-Primarily it was designed to be a functional programming language but you can also do pbject oriented programming or imperative programming 
+Primarily it was designed to be a functional programming language but you can also do object oriented programming or imperative programming 
 but the last one should only be rarely used and its considered to be bad design. F# was invented by a Microsoft Research Team and is compatible with
-the whole .NET Plattform. So you can interact for example with Visual Basic or C#, which makes F# very powerfull for actual application writing. 
+the whole .NET Platform. So you can interact for example with Visual Basic or C#, which makes F# very powerful for actual application writing. 
 This was the main idea, to build a functional programming language, that is integrated into the Microsoft Ecosystem.
 Its language features are very similar to [OCaml](https://de.wikipedia.org/wiki/Objective_CAML) and it was indeed a role model for F#. 
 Because F# is a general purpose language it can be applied in a wide area. For example in web development, analytical programming and scripting.
@@ -49,14 +49,14 @@ Because F# is a general purpose language it can be applied in a wide area. For e
 <a name="fprog"></a>
 ### 1. Functional programming basics
 
-The basic concept of functional programing is that the most important structural unit is a function in contrast for example to object oriented programming, where the 
+The basic concept of functional programming is that the most important structural unit is a function in contrast for example to object oriented programming, where the 
 most important structural unit is a class. The abstraction happens through passing basic functions to higher level functions as arguments. 
-One goal of functional programming is also to minimze the use of mutable state. So in a functional programming language you only work with immutable data structures.
+One goal of functional programming is also to minimize the use of mutable state. So in a functional programming language you only work with immutable data structures.
 
 <a name="fconc"></a>
 ### 2. F# concepts
 
-In this section we will focus on the propertys of F#'s language features. F# has a lot of language design features because it is a multi paradigm programming language. But in this section we will first and foremost focus on the functional programming features.
+In this section we will focus on the properties of F#'s language features. F# has a lot of language design features because it is a multi paradigm programming language. But in this section we will first and foremost focus on the functional programming features.
 
 #### Let Bindings and immutability
 
@@ -87,14 +87,14 @@ F# interferes that the arguments `prefixStr` and `baseStr` have to be of type `s
 
 #### First-class functions
 
-To be called a functional programming language, the programming languages functions have to fullfill the following propertys:
+To be called a functional programming language, the programming languages functions have to fulfil the following properties:
 
 * Bind functions to identifiers
 * Store functions in data structures like lists
 * Pass functions as arguments in another function call
 * Return a function from a function call
 
-Of course F# supports all of the above propertys. The first one we have allready seen in the `let prefix` example. You can see an example of these propertys [here](https://docs.microsoft.com/en-us/dotnet/fsharp/introduction-to-functional-programming/first-class-functions).
+Of course F# supports all of the above properties. The first one we have already seen in the `let prefix` example. You can see an example of these properties [here](https://docs.microsoft.com/en-us/dotnet/fsharp/introduction-to-functional-programming/first-class-functions).
 
 #### The Pipe Operator
 
@@ -109,11 +109,11 @@ Example usage:
 "Hello World" |> print
 ```
 
-Will print `"Hello World". This pipe operator takes the output of the left function and uses it as an argument for the right function. This is usefull when building more complex functions out of simpler ones.
+Will print `"Hello World". This pipe operator takes the output of the left function and uses it as an argument for the right function. This is useful when building more complex functions out of simpler ones.
 
 #### Types
 
-The type system in F# let us define data structures that have some sort of attributes. Together with functions you can encapsulate and polymorph your data without classes. For example the discriminate union type lets you easily define a class hierachy.
+The type system in F# let us define data structures that have some sort of attributes. Together with functions you can encapsulate and polymorph your data without classes. For example the discriminate union type lets you easily define a class hierarchy.
 
 ```Fsharp
 type Shape =
@@ -138,7 +138,7 @@ The functional Boolean Parser in F# consists of three parts. The abstract syntax
 <a name="AST"></a>
 ### 1. Abstract syntax tree
 
-The abstract syntax tree is very simple with the F# concepts. like we have seen in the previous section about Types, you can easily make class hierachys with discriminate unit types. This will result in the following.
+The abstract syntax tree is very simple with the F# concepts. like we have seen in the previous section about Types, you can easily make class hierarchies with discriminate unit types. This will result in the following.
 
 ```Fsharp
 type Node = 
@@ -179,7 +179,7 @@ type Result<'a> =
     | Failure of string 
 ```
 
-A Result is a discriminate union of Success of type 'a or Failure of type string. In the Fparsec library this result type has one mor generic type parameter, which defines the user state, but isn't important for understanding the functionality of the parser.
+A Result is a discriminate union of Success of type 'a or Failure of type string. In the FParsec library this result type has one more generic type parameter, which defines the user state, but isn't important for understanding the functionality of the parser.
 
 Summarized a Parser returns a Result of a type of your choosing embedded in Success or a Failure with an error message. In the Boolparser implementation we want to parse the string into a `Node` type, to build an AST and evaluating it afterwards.
 
@@ -198,9 +198,9 @@ These were some of the important combinators. To learn more about FParsec and pa
 
 In this section we will look upon the Boolean Parser implementation. We will focus on some of the basic ideas.The full code can be viewed in `BooleanCompiler/BooleanParser.fs`.
 
-#### Combinating 
+#### Combinations 
 
-We constuct new parsers with the help of the FParsec library like already seen in the last section. For example we define a `identifer` parser.
+We construct new parsers with the help of the FParsec library like already seen in the last section. For example we define a `identifer` parser.
 
 ```Fsharp
 let parseIdentifier:Parser<string, unit> = ws >>. many1SatisfyL isAsciiLetter "identifier"
@@ -215,7 +215,7 @@ To parse the input string into an AST Node we need the `|>>` Operator. For examp
 ```Fsharp
 let parseVariable = (parseIdentifier |>> fun x -> Var(x)) 
 ```
-This parses a variable like we have seen above and then applys the lambad expression to the `Result` of the `parseidentifier`. so the signature of this Parser is `string -> Result<Node>` because we transform the `node` output of `parseidentifier` into a `Node`  
+This parses a variable like we have seen above and then applies the lambda expression to the `Result` of the `parseidentifier`. so the signature of this Parser is `string -> Result<Node>` because we transform the `node` output of `parseidentifier` into a `Node`  
 
 #### Recursion
 
@@ -231,10 +231,16 @@ To construct the full syntax tree we need recursion. This is accomplished by imp
 <var> ::= '[a-zA-Z0-9]*'
 ``` 
 
-The idea is to implement these as recursive functions and this is done in the Boolean Parser with the `parseExpression`,`parseOr`,`parseAnd`,`parseAtom` and `parseNot`. These call eachother similar to the grammar and create AST nodes with helper functions like `makeOr`.   
+The idea is to implement these as recursive functions and this is done in the Boolean Parser with the `parseExpression`,`parseOr`,`parseAnd`,`parseAtom` and `parseNot`. These call each other similar to the grammar and create AST nodes with helper functions like `makeOr`.   
 
 <a name="Comp"></a>
 ## 4. Comparison to Golang
+
+Go also implements functional programming paradigms. In this section we will compare them to the already defined functional language features of F#.
+
+#### Immutability 
+
+In Go the immutability of variables is also preferred 
 
 <a name="Conc"></a>
 ## 5. Conclusion
