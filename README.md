@@ -240,10 +240,37 @@ Go also implements functional programming paradigms. In this section we will com
 
 #### Immutability 
 
-In Go the immutability of variables is also preferred 
+In Go the immutability of variables is also preferred but not enforced. If you pass a parameter to a function it is passed by value except you define it as a pointer to the reference.  
+In F# the normal `let` binding enforces immutability. You can define a mutable variable with `let mutable` but this is considered bad practice if you are programming functional. 
+
+#### Type interference
+
+Go can interfere the types of variables when you use the `:=` equals instead of `=`. But Go can't interfere types of functions. You have to define its parameter types and return types yourself. This is a major difference to F#. It can interfere types with the same equals from variables and functions when a type declaration is missing.  
+
+#### First class functions
+
+We have already seen, that in F# functions are first class functions. In Go this holds true as well. So in this case the two languages are completely equal. 
+
+#### Operators
+
+F# has a more 'functional' approach to operators. So there are multiple ones, that can concatenate functions together. In Go there are no special function operators all concatenation is done through the normal function parenthesis.
+
+#### Types
+
+The type system in Go is similar to the one in F#, but is also a bit different. We don't have discriminate unions in Go and as a result no similar `match..with` construct. The types in Go are the same as the struct types in F#.
+
+#### Parser Combinators
+
+The implementation of the parser combinators are very similar to the F# ones. Except in the already above discussed type system. But the `Result` and `Parser` type are also present in Go. Their implementation just varies a bit from the F# ones.
+
+#### Boolean Parser
+
+Because of the similarity in the Parser Combinators. The implementation of the Boolean Parser is also very similar to Go. It only differs in the Operator usage. In Go everything has to be written in the function parenthesis like already discussed in the Operator section.  
 
 <a name="Conc"></a>
 ## 5. Conclusion
+
+In conclusion F# and Go's functional language features are similar and only differ in smaller aspects. The reason for this may be, that F# focuses on being a fully functional programming language, while supporting all other language features to be able to support the full .NET stack. Go has a more general approach and wants to support functional as well as other programming styles.  
 
 <a name="Ref"></a>
 ## 6. References
