@@ -25,3 +25,4 @@ C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\obj\Release\net
 C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\obj\Release\netcoreapp3.0\BooleanCompiler.fsproj.CopyComplete
 C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\obj\Release\netcoreapp3.0\BooleanCompiler.dll
 C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\obj\Release\netcoreapp3.0\BooleanCompiler.pdb
+C:\Users\Victor\Projects\KP-seminar-paper-Fsharp\BooleanCompiler\obj\Release\netcoreapp3.0\BooleanCompiler.fsprojAssemblyReference.cache
