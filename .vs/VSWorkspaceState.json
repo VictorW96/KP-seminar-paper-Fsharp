@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BooleanCompiler"
+    "\\BooleanCompiler",
+    "\\BooleanCompiler.Tests"
   ],
+  "SelectedNode": "\\BooleanCompiler",
   "PreviewInSolutionExplorer": false
 }

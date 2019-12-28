@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "BooleanCompiler", "BooleanCompiler\BooleanCompiler.fsproj", "{546E6714-1C26-4265-B0A3-C79E3F961A54}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BooleanCompiler.Tests", "BooleanCompiler.Tests\BooleanCompiler.Tests.fsproj", "{D5EE4D07-2CF5-435C-A2EF-7AD037282566}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{546E6714-1C26-4265-B0A3-C79E3F961A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{546E6714-1C26-4265-B0A3-C79E3F961A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{546E6714-1C26-4265-B0A3-C79E3F961A54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5EE4D07-2CF5-435C-A2EF-7AD037282566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5EE4D07-2CF5-435C-A2EF-7AD037282566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5EE4D07-2CF5-435C-A2EF-7AD037282566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5EE4D07-2CF5-435C-A2EF-7AD037282566}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
