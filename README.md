@@ -68,7 +68,7 @@ a = 20
 This code isn't valid F# code for two reasons. First if you bind a value to an identifier with the `let` binding you cannot 
 alter it anymore. It is immutable to assert one principle of functional programming. Second the `=` is the equality sign and not the assignment operator. This would be `<-`. You can do mutable data structures with `let mutable` but with this extra keyword its obviously discouraged.
 
-#### Type interference
+#### type inference
 
 ```Fsharp
 let a = 10
@@ -83,7 +83,7 @@ let prefix prefixStr baseStr =
     prefixStr + "," + baseStr
 ```
 
-F# interferes that the arguments `prefixStr` and `baseStr` have to be of type `string` and that the function returns a `string` because of the method body and the operation in which they are used. You can always add the type definition, if you want to. In this way F# combines the security of a strongly typed language and the read- and writability of a loosely typed language.
+F# infers that the arguments `prefixStr` and `baseStr` have to be of type `string` and that the function returns a `string` because of the method body and the operation in which they are used. You can always add the type definition, if you want to. In this way F# combines the security of a strongly typed language and the read- and writability of a loosely typed language.
 
 #### First-class functions
 
@@ -243,9 +243,9 @@ Go also implements functional programming paradigms. In this section we will com
 In Go the immutability of variables is also preferred but not enforced. If you pass a parameter to a function it is passed by value except you define it as a pointer to the reference.  
 In F# the normal `let` binding enforces immutability. You can define a mutable variable with `let mutable` but this is considered bad practice if you are programming functional. 
 
-#### Type interference
+#### type inference
 
-Go can interfere the types of variables when you use the `:=` equals instead of `=`. But Go can't interfere types of functions. You have to define its parameter types and return types yourself. This is a major difference to F#. It can interfere types with the same equals from variables and functions when a type declaration is missing.  
+Go can infer the types of variables when you use the `:=` equals instead of `=`. But Go can't infer types of functions. You have to define its parameter types and return types yourself. This is a major difference to F#. It can infer types with the same equals from variables and functions when a type declaration is missing.  
 
 #### First class functions
 
